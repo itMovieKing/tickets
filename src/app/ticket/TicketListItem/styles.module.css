@@ -5,6 +5,25 @@
   margin-top: 20px;
 
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket_trainNumber {
+  width: 160px;
+}
+
+.ticket_departure,
+.ticket_arrival {
+  width: 180px;
+}
+
+.ticket_seatInfo {
+  width: 80px;
+}
+
+.ticket_station {
+  margin-bottom: 20px;
 }
 
 .ticketListItem_trainNumber {

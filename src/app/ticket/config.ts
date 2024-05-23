@@ -2,7 +2,12 @@ type SeatInfo = {
   seatNumber: string;
   type: string;
 };
+enum TicketType {
+  Train,
+  Airplane,
+}
 export type Ticket = {
+  type?: TicketType,
   departureStation: string;
   arrivalStation: string;
   trainNumber: string;
@@ -72,6 +77,7 @@ export const ticketList: Ticket[] = [
   },
   // [2023-04-27,2023-05-02]
   {
+    type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '杭州萧山',
     trainNumber: '首都航空JD5351',
@@ -124,6 +130,7 @@ export const ticketList: Ticket[] = [
       type: '二等座',
     },
     passenger: '🥕',
+    price: 656,
   },
   {
     departureStation: '北京南站',
@@ -136,6 +143,7 @@ export const ticketList: Ticket[] = [
       type: '二等座',
     },
     passenger: '🥕',
+    price: 594,
   },
   // [2023-07-07,2023-07-09]
   {
@@ -151,6 +159,7 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
   },
   {
+    type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '杭州萧山',
     trainNumber: '首都航空JD5351',
@@ -355,6 +364,7 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   {
+    type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '杭州萧山',
     trainNumber: '东方航空MU5458',
@@ -396,6 +406,7 @@ export const ticketList: Ticket[] = [
   },
   // [2024-03-16,2024-03-17]
   {
+    type: TicketType.Airplane,
     departureStation: '杭州萧山',
     arrivalStation: '北京大兴',
     trainNumber: '海南航空HU7678',
@@ -409,6 +420,7 @@ export const ticketList: Ticket[] = [
     price: 790,
   },
   {
+    type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '杭州萧山',
     trainNumber: '东方航空MU5139',
@@ -476,6 +488,7 @@ export const ticketList: Ticket[] = [
   },
   // [2024-04-13,2024-04-15]  -夯筑
   {
+    type: TicketType.Airplane,
     departureStation: '北京首都',
     arrivalStation: '杭州萧山',
     trainNumber: '国航CA1732',
