@@ -1,5 +1,5 @@
 .ticketListItem {
-  border: 1px solid #aaa;
+  border:2px dashed #0a0;
   border-radius: 8px;
   padding: 15px 20px;
   margin-top: 20px;
@@ -7,6 +7,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: relative;
+}
+
+.index {
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  color: #ccc;
 }
 
 .ticket_trainNumber {

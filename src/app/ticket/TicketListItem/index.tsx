@@ -2,14 +2,17 @@ import { Ticket } from '../config';
 import styles from './styles.module.css'
 
 type Props = {
-  ticket: Ticket
+  ticket: Ticket,
+  index: number,
 }
 export default function TicketListItem({
-  ticket
+  ticket,
+  index,
 }: Props) {
-  const { trainNumber, departureStation, arrivalStation, departureTime,  arrivalTime, seatInfo, passenger } = ticket
+  const { trainNumber, departureStation, arrivalStation, departureTime,  arrivalTime, seatInfo, passenger, price } = ticket
   return (
     <div className={styles.ticketListItem}>
+      <div className={styles.index}>{index}</div>
       <div className={styles.ticket_trainNumber}>{passenger} - {trainNumber}</div>
       <div className={styles.ticket_departure}>
         <div className={styles.ticket_station}>{departureStation}</div>

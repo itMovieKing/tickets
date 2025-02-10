@@ -6,18 +6,22 @@ import TicketListItem from './TicketListItem'
 import styles from './styles.module.css'
 
 export default function TicketPage() {
-  // console.log('ticketList total price',
-  //   ticketList.reduce((sum, cur) => {
+  // console.log({
+  //   'total': ticketList.length,
+  //   'total price': ticketList.reduce((sum, cur) => {
   //     const curPrice = cur.price || 635
   //     sum += curPrice
   //     return sum
-  //   }, 0)
+  //   }, 0),
+  // }
   // )
   return (
     <div className={styles.ticketList}>
       {
-        ticketList.map((ticket, index) =>{
-          return <TicketListItem key={index} ticket={ticket}/>
+        ticketList
+          // .filter(item => !item.price)
+          .map((ticket, index) =>{
+          return <TicketListItem key={index} index={index+1} ticket={ticket}/>
         })
       }
     </div>
