@@ -7,7 +7,7 @@ enum TicketType {
   Airplane,
 }
 export type Ticket = {
-  type?: TicketType,
+  type: TicketType,
   departureStation: string;
   arrivalStation: string;
   trainNumber: string;
@@ -18,9 +18,18 @@ export type Ticket = {
   price?: number,
 };
 
-export const ticketList: Ticket[] = [
-  // [2023-03-11,2023-03-12]
+export type DurationItem = {
+  duration: [string, string];
+  local: string
+};
+export type TicketListItem = Ticket | DurationItem;
+export const ticketList: TicketListItem[] = [
   {
+    duration: ['2023-03-11','2023-03-12'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G38',
@@ -34,6 +43,7 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G187',
@@ -46,8 +56,12 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 623,
   },
-  // [2023-04-08,2023-04-09] 
   {
+    duration: ['2023-04-08','2023-04-09'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G32',
@@ -62,6 +76,7 @@ export const ticketList: Ticket[] = [
     price: 650.5,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G39',
@@ -75,7 +90,11 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 621.5,
   },
-  // [2023-04-27,2023-05-02]
+  // [2023-04-27,2023-05-02] -- 杭州
+  {
+    duration: ['2023-04-27','2023-05-02'],
+    local: '杭州'
+  },
   {
     type: TicketType.Airplane,
     departureStation: '北京大兴',
@@ -91,6 +110,7 @@ export const ticketList: Ticket[] = [
     price: 957,
   },
   {
+    type: TicketType.Train,
     departureStation: '南京南站',
     arrivalStation: '北京南站',
     trainNumber: 'G114',
@@ -118,8 +138,13 @@ export const ticketList: Ticket[] = [
   //   passenger: '🥕',
   //   price: 130,
   // },
-  // [2023-06-02,2023-06-04]
+  // [2023-06-02,2023-06-04] -- 北京
   {
+    duration: ['2023-06-02','2023-06-04'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G40',
@@ -133,6 +158,7 @@ export const ticketList: Ticket[] = [
     price: 656,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G193',
@@ -145,8 +171,13 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 594,
   },
-  // [2023-07-07,2023-07-09]
+  // [2023-07-07,2023-07-09] -- 北京
   {
+    duration: ['2023-07-07','2023-07-09'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G38',
@@ -171,9 +202,15 @@ export const ticketList: Ticket[] = [
       type: '经济舱',
     },
     passenger: '🥕',
+    price: 1100,
   },
   // [2023-08-12,2023-08-13] -杭州
   {
+    duration: ['2023-08-12','2023-08-13'],
+    local: '杭州'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G187',
@@ -187,6 +224,7 @@ export const ticketList: Ticket[] = [
     price: 623,
   },
   {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G34',
@@ -199,8 +237,13 @@ export const ticketList: Ticket[] = [
     passenger: '🐰',
     price: 674,
   },
-  // [2023-09-01,2023-09-03]
+  // [2023-09-01,2023-09-03] -- 北京
   {
+    duration: ['2023-09-01','2023-09-03'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G40',
@@ -214,6 +257,7 @@ export const ticketList: Ticket[] = [
     price: 614,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G189',
@@ -226,8 +270,13 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 623,
   },
-  // [2023-10-03,2023-10-07]
+  // [2023-10-03,2023-10-07]  --北京
   {
+    duration: ['2023-10-03','2023-10-07'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G36',
@@ -241,6 +290,7 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G189',
@@ -255,6 +305,11 @@ export const ticketList: Ticket[] = [
   },
   // [2023-11-04,2023-11-05] -南京
   {
+    duration: ['2023-11-04','2023-11-05'],
+    local: '南京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '南京南站',
     trainNumber: 'G172',
@@ -268,6 +323,7 @@ export const ticketList: Ticket[] = [
     price: 141,
   },
   {
+    type: TicketType.Train,
     departureStation: '南京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G2667',
@@ -281,6 +337,7 @@ export const ticketList: Ticket[] = [
     price: 124,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京站',
     arrivalStation: '南京站',
     trainNumber: 'D705',
@@ -294,6 +351,7 @@ export const ticketList: Ticket[] = [
     price: 420,
   },
   {
+    type: TicketType.Train,
     departureStation: '南京南站',
     arrivalStation: '北京南站',
     trainNumber: 'G26',
@@ -306,8 +364,13 @@ export const ticketList: Ticket[] = [
     passenger: '🐰',
     price: 464,
   },
-  // [2023-11-24,2023-11-26]
+  // [2023-11-24,2023-11-26] --北京
   {
+    duration: ['2023-11-24','2023-11-26'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G34',
@@ -321,6 +384,7 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G39',
@@ -333,8 +397,13 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 674,
   },
-  // [2023-12-29,2024-01-01]
+  // [2023-12-29,2024-01-01] --北京
   {
+    duration: ['2023-12-29','2024-01-01'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G34',
@@ -348,6 +417,7 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G193',
@@ -360,8 +430,13 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 594,
   },
-  // [2024-01-19,2024-01-21]
+  // [2024-01-19,2024-01-21] --北京
   {
+    duration: ['2024-01-19','2024-01-21'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
     trainNumber: 'G34',
@@ -388,8 +463,13 @@ export const ticketList: Ticket[] = [
     passenger: '🥕',
     price: 720,
   },
-  // [2024-02-24,2024-02-25]
+  // [2024-02-24,2024-02-25] --杭州
   {
+    duration: ['2024-02-24','2024-02-25'],
+    local: '杭州'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '北京南站',
     arrivalStation: '杭州东站',
     trainNumber: 'G185',
@@ -403,6 +483,7 @@ export const ticketList: Ticket[] = [
     price: 645,
   },
   {
+    type: TicketType.Train,
     departureStation: '杭州站',
     arrivalStation: '北京站',
     trainNumber: 'D12',
@@ -415,7 +496,11 @@ export const ticketList: Ticket[] = [
     passenger: '🐰',
     price: 617,
   },
-  // [2024-03-16,2024-03-17]
+  // [2024-03-16,2024-03-17] --北京
+  {
+    duration: ['2024-03-16','2024-03-17'],
+    local: '北京'
+  },
   {
     type: TicketType.Airplane,
     departureStation: '杭州萧山',
@@ -446,6 +531,11 @@ export const ticketList: Ticket[] = [
   },
   // [2024-04-13,2024-04-15]  -武汉
   {
+    duration: ['2024-04-13','2024-04-15'],
+    local: '武汉'
+  },
+  {
+    type: TicketType.Train,
     departureStation: '杭州站',
     arrivalStation: '武昌站',
     trainNumber: 'Z47',
@@ -459,6 +549,7 @@ export const ticketList: Ticket[] = [
     price: 194,
   },
   {
+    type: TicketType.Train,
     departureStation: '武昌站',
     arrivalStation: '杭州站',
     trainNumber: 'Z45',
@@ -472,6 +563,7 @@ export const ticketList: Ticket[] = [
     price: 208,
   },
   {
+    type: TicketType.Train,
     departureStation: '北京西站',
     arrivalStation: '汉口站',
     trainNumber: 'D37',
@@ -485,6 +577,7 @@ export const ticketList: Ticket[] = [
     price: 327,
   },
   {
+    type: TicketType.Train,
     departureStation: '武昌站',
     arrivalStation: '北京西站',
     trainNumber: 'D2',
@@ -498,6 +591,10 @@ export const ticketList: Ticket[] = [
     price: 329,
   },
   // [2024-05-24,2024-05-26]  --杭州
+  {
+    duration: ['2024-05-24','2024-05-26'],
+    local: '杭州'
+  },
   {
     type: TicketType.Airplane,
     departureStation: '北京首都',
@@ -528,6 +625,10 @@ export const ticketList: Ticket[] = [
   },
   // [2024-06-08,2024-06-10]  --北京
   {
+    duration: ['2024-06-08','2024-06-10'],
+    local: '北京'
+  },
+  {
     type: TicketType.Airplane,
     departureStation: '北京首都',
     arrivalStation: '杭州萧山',
@@ -539,6 +640,7 @@ export const ticketList: Ticket[] = [
       type: '经济舱',
     },
     passenger: '🥕',
+    price: 550,
   },
   {
     type: TicketType.Train,
@@ -555,6 +657,10 @@ export const ticketList: Ticket[] = [
     price: 562,
   },
   // [2024-06-28,2024-06-30]  --北京
+  {
+    duration: ['2024-06-28','2024-06-30'],
+    local: '北京'
+  },
   {
     type: TicketType.Train,
     departureStation: '杭州东站',
@@ -585,6 +691,10 @@ export const ticketList: Ticket[] = [
   },
   // [2024-07-26,2024-07-28]  --北京
   {
+    duration: ['2024-07-26','2024-07-28'],
+    local: '北京'
+  },
+  {
     type: TicketType.Train,
     departureStation: '杭州站',
     arrivalStation: '北京站',
@@ -613,6 +723,10 @@ export const ticketList: Ticket[] = [
     price: 586,
   },
   // [2024-08-09,2024-08-11]  --北京
+  {
+    duration: ['2024-08-09','2024-08-11'],
+    local: '北京'
+  },
   {
     type: TicketType.Train,
     departureStation: '杭州东站',
@@ -643,6 +757,10 @@ export const ticketList: Ticket[] = [
   },
   // [2024-09-06,2024-09-08]  --北京
   {
+    duration: ['2024-09-06','2024-09-08'],
+    local: '北京'
+  },
+  {
     type: TicketType.Train,
     departureStation: '杭州站',
     arrivalStation: '北京站',
@@ -672,10 +790,14 @@ export const ticketList: Ticket[] = [
   },
   // [2024-10-02,2024-10-08]  --四川
   {
+    duration: ['2024-10-02','2024-10-08'],
+    local: '四川'
+  },
+  {
     type: TicketType.Airplane,
     departureStation: '杭州萧山',
     arrivalStation: '成都天府',
-    trainNumber: 'MU5457',
+    trainNumber: 'MF8495',
     departureTime: '2024-10-02 21:30:00',
     arrivalTime: '2024-10-02 23:05:00',
     seatInfo: {
@@ -683,12 +805,13 @@ export const ticketList: Ticket[] = [
       type: '经济舱',
     },
     passenger: '🥕',
+    price: 900,
   },
   {
     type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '成都天府',
-    trainNumber: 'MF8495',
+    trainNumber: 'MU5457',
     departureTime: '2024-10-02 21:30:00',
     arrivalTime: '2024-10-02 23:05:00',
     seatInfo: {
@@ -710,6 +833,7 @@ export const ticketList: Ticket[] = [
       type: '经济舱',
     },
     passenger: '🥕',
+    price: 1280,
   },
   {
     type: TicketType.Airplane,
@@ -726,6 +850,10 @@ export const ticketList: Ticket[] = [
     price: 1270,
   },
   // [2024-10-26,2024-10-27]  --杭州
+  {
+    duration: ['2024-10-26','2024-10-27'],
+    local: '杭州'
+  },
   {
     type: TicketType.Train,
     departureStation: '北京站',
@@ -755,6 +883,10 @@ export const ticketList: Ticket[] = [
     price: 674,
   },
   // [2024-11-22,2024-11-24]  --徐州
+  {
+    duration: ['2024-11-22','2024-11-24'],
+    local: '徐州'
+  },
   {
     type: TicketType.Train,
     departureStation: '杭州东站',
@@ -813,6 +945,10 @@ export const ticketList: Ticket[] = [
   },
   // [2024-12-27,2024-12-29]  --北京
   {
+    duration: ['2024-12-27','2024-12-29'],
+    local: '北京'
+  },
+  {
     type: TicketType.Train,
     departureStation: '杭州东站',
     arrivalStation: '北京南站',
@@ -830,16 +966,21 @@ export const ticketList: Ticket[] = [
     type: TicketType.Airplane,
     departureStation: '北京大兴',
     arrivalStation: '杭州萧山',
-    trainNumber: 'CZ8853',
-    departureTime: '2024-12-29 21:30:00',
-    arrivalTime: '2024-12-29 23:05:00',
+    trainNumber: 'CZ3281',
+    departureTime: '2024-12-30 21:30:00',
+    arrivalTime: '2024-12-30 23:05:00',
     seatInfo: {
       seatNumber: '35A',
       type: '经济舱',
     },
     passenger: '🥕',
+    price: 620,
   },
   // [2025-01-17,2025-01-20]  --杭州
+  {
+    duration: ['2025-01-17','2025-01-20'],
+    local: '杭州'
+  },
   {
     type: TicketType.Airplane,
     departureStation: '北京大兴',
@@ -867,5 +1008,38 @@ export const ticketList: Ticket[] = [
     },
     passenger: '🐰',
     price: 1370,
+  },
+   // [2025-02-14,2025-02-16]  --北京
+   {
+    duration: ['2025-02-14','2025-02-16'],
+    local: '北京'
+  },
+  {
+    type: TicketType.Airplane,
+    departureStation: '杭州萧山',
+    arrivalStation: '北京首都',
+    trainNumber: 'CA1717',
+    departureTime: '2025-02-14 15:00:00',
+    arrivalTime: '2025-02-14 17:20:00',
+    seatInfo: {
+      seatNumber: '35A',
+      type: '经济舱',
+    },
+    passenger: '🥕',
+    price: 740,
+  },
+  {
+    type: TicketType.Train,
+    departureStation: '北京南站',
+    arrivalStation: '杭州东站',
+    trainNumber: 'G39',
+    departureTime: '2025-02-16 19:00:00',
+    arrivalTime: '2025-02-16 23:21:00',
+    seatInfo: {
+      seatNumber: '49C',
+      type: '经济舱',
+    },
+    passenger: '🥕',
+    price: 674,
   },
 ]
